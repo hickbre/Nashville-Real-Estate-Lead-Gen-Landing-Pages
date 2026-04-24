@@ -818,7 +818,7 @@
   <div class="wrap">
     <div class="eyebrow">Nashville Seller Education</div>
     <h1>What Will You <span class="italic accent">Actually</span> Net?</h1>
-    <p class="hero-sub">An honest, interactive look at what you'd walk away with.<br>Plus, why pricing strategy is the single biggest factor in your bottom line.</p>
+    <p class="hero-sub">An honest, interactive look at what you'd walk away with when you sell your home.<br>Plus, why pricing strategy is the single biggest factor in your bottom line.</p>
   </div>
 </header>
 
@@ -833,17 +833,17 @@
       <div class="edu-card">
         <div class="num">01</div>
         <h3>The Overpricing Trap</h3>
-        <p>Buyers search in brackets. Price at $1.25M and you miss everyone searching up to $1.2M — your most motivated buyers. Fewer showings means fewer offers, and weaker leverage.</p>
+        <p>Buyers search in price brackets online, and smart pricing lives on the bridge between two of them. Price at $1.265M and you only capture buyers searching from $1.25M and up. Price at $1.25M and you capture both the buyers searching up to $1.25M AND the buyers starting their search at $1.25M, doubling your potential audience before a single showing. More eyes means more competition. More competition means more leverage. Pricing above a bracket means less eyes on your home.</p>
       </div>
       <div class="edu-card">
         <div class="num">02</div>
         <h3>The Stale Listing Effect</h3>
-        <p>After 21 days, buyers assume something is wrong with your home. Price reductions signal desperation, not value. The longer you sit, the more leverage you lose.</p>
+        <p>After approximately 21 days on the market, buyers start to assume something is wrong with your home. That's just the psychology of this market, coming out of a period where the majority of homes moved in days. There may be absolutely nothing wrong with the property, the sale cycle is simply slower right now, but perception becomes reality in negotiation. A stale listing invites low offers, demands for concessions, and the kind of leverage shift that costs you money. Price reductions only make it worse, signaling desperation rather than value.</p>
       </div>
       <div class="edu-card">
         <div class="num">03</div>
         <h3>The Bidding War Math</h3>
-        <p>A $1.15M list that attracts six offers and closes at $1.21M beats a $1.25M list that grinds down to $1.19M after 75 days — and costs you two months of carrying costs along the way.</p>
+        <p>A $1.15M list price that attracts multiple offers and closes at $1.21M beats a $1.25M list that grinds down to $1.18M after 77 days on market, costs you two months of carrying costs, and a lot of stress along the way. That's not a theory, we've seen it happen many times, and this simulator will help show you in real time.</p>
       </div>
     </div>
   </div>
@@ -1077,10 +1077,8 @@
     <div class="bridge">
       <div class="eyebrow" style="color: var(--accent-deep);">What's next?</div>
       <h3>Planning to buy after you sell?</h3>
-      <p>With an estimated <strong id="bridgeNet">$—</strong> in proceeds, your purchasing power in Nashville looks different than you might expect.</p>
-      <div class="big-num" id="bridgePower">—</div>
-      <p style="font-size:13px; margin: 0 auto 20px;">Estimated max purchase price with 20% down at current market rates.</p>
-      <a href="https://bretthickeyrealestate-afford.com" target="_blank" rel="noopener" class="bridge-btn">See your full affordability →</a>
+      <p>With approximately <strong id="bridgeNet">$—</strong> in estimated proceeds heading toward your next home, combined with anything else you bring to the table, your real purchasing power is worth knowing before you start looking.</p>
+      <a href="https://bretthickeyrealestate-afford.com" target="_blank" rel="noopener" class="bridge-btn">See my full affordability →</a>
     </div>
   </div>
 </section>
@@ -1504,8 +1502,6 @@ function calc() {
 
   const netForBridge = Math.max(0, results.smart.net);
   document.getElementById('bridgeNet').textContent = fmtMoney(netForBridge);
-  const estPurchasePower = netForBridge / 0.20;
-  document.getElementById('bridgePower').textContent = fmtMoney(estPurchasePower);
 
   window._state = {
     smartNet: results.smart.net,
@@ -1581,7 +1577,7 @@ function buildShareText() {
     '  = ESTIMATED NET:         ' + fmtMoney(s.smartNet || 0),
     '',
     'Calculated via bretthickeyrealestate-afford.com',
-    'Educational only — not a formal valuation.'
+    'Educational only, not a formal valuation.'
   ].join('\n');
 }
 
