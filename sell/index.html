@@ -1372,11 +1372,6 @@ function initAutocomplete() {
     types: ['address']
   });
 
-  // Style the new element to match our input
-  placePicker.style.width = '100%';
-  placePicker.style.fontFamily = "'Inter', sans-serif";
-  placePicker.style.fontSize = '17px';
-
   // Replace the original input with the new element
   input.parentNode.replaceChild(placePicker, input);
 
