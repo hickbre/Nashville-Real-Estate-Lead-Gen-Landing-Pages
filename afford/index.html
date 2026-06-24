@@ -1011,7 +1011,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-header">
       <div class="eyebrow">Step 2 · See How Seller Credits Work</div>
       <h2>The <span class="italic">Permanent Rate Buydown</span> Move</h2>
-      <p class="desc">A seller concession used to permanently drop your rate by one full percent for the entire 30-year loan (e.g., <strong id="s2RateExample">—</strong>). Using the same 3% seller concession amount as a temporary buydown - very different math over time.</p>
+      <p class="desc">A seller concession used to permanently drop your rate by one full percent for the entire 30-year loan (e.g., <strong id="s2RateExample">—</strong>). Using the same 3% seller concession amount as a permanent buydown instead of a temporary one is very different math over time.</p>
     </div>
 
     <div class="card">
@@ -1266,23 +1266,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    ⚙️ EDIT HERE — update when rates move
    Source: mortgagenewsdaily.com (30-yr fixed national average)
    ===================================================== */
-const CURRENT_MARKET_RATE = 6.33;
-const CURRENT_MARKET_RATE_DATE = "April 21, 2026";
+const CURRENT_MARKET_RATE = 6.55;
+const CURRENT_MARKET_RATE_DATE = "June 24, 2026";
 
 /* =====================================================
    FIXED ASSUMPTIONS
    ===================================================== */
-const PROP_TAX_RATE = 0.010;
+// Property tax: Davidson County 25% assessment ratio × $3.254 per $100 of assessed value
+// Uses purchase price as stand-in for assessed value (actual assessed value set by assessor)
+// Effective annual rate: 0.25 × 0.03254 = 0.008135
+const PROP_TAX_RATE = 0.008135;
 const INSURANCE_RATE = 0.0035;
-const PMI_RATE = 0.0017;
+// PMI: typical 0.65% annual for conventional loans under 20% down
+// Monthly PMI = (Loan amount × PMI rate) / 12
+const PMI_RATE = 0.0065;
 const PMI_LTV_THRESHOLD = 0.80;
 const CLOSING_COST_RATE = 0.025;
 const LOAN_TERM_MONTHS = 360;
 
-// Section 2: Permanent 1% buydown below current market rate
-// Edit CURRENT_MARKET_RATE above — Section 2 updates automatically.
-const S2_BASELINE_RATE = CURRENT_MARKET_RATE;
-const S2_BUYDOWN_RATE = CURRENT_MARKET_RATE - 1.0;
+// Section 2: Permanent rate buydown example, fixed at 6% → 5%
+const S2_BASELINE_RATE = 6.0;
+const S2_BUYDOWN_RATE = 5.0;
 const S2_RATIO = 0.33;
 const S2_DOWN_PCT = 10;
 
